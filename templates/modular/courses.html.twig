@@ -1,0 +1,36 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+	<div class="courses slide-up">
+
+		{% if module.subtitle %}
+			<h4>{{ module.subtitle.translatable }}</h4>
+		{% endif %}
+
+		{% if module.title %}
+			<h3 class="block-title">{{ module.title.translatable }}</h3>
+		{% endif %}
+
+		{% if module.description %}
+			<p>{{ module.description.translatable }}</p>
+		{% endif %}
+
+		<div class="courses-container container">
+			{% for course in page.header.courses %}
+				{% if course.description != '' and course.title != '' %}
+					<div class="course">
+						<div class="course-container">
+							{% set icon = page.media[course.image] %}
+							<div class="icon-container">
+								<img class="icon" src="{{ icon.url }}"/></div>
+								<h5 class="course-title">{{ course.title.translatable }}</h5>
+						</div>
+						<p>{{ course.description.translatable }}</p>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

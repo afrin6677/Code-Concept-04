@@ -1,0 +1,69 @@
+
+{# Background color #}
+{% if theme['navbar_background_color'] %}
+    {% set navbar_background_color =  theme['navbar_background_color'] %}
+{% else %}
+    {% set navbar_background_color = 'bg-transparent' %}
+{% endif %}
+
+
+{# Padding #}
+{% if theme['navbar_top_bottom_padding'] %}
+    {% set navbar_top_bottom_padding =  theme['navbar_top_bottom_padding'] %}
+{% else %}
+    {% set navbar_top_bottom_padding = '1rem' %}
+{% endif %}
+
+{% if theme['navbar_left_right_padding'] %}
+    {% set navbar_left_right_padding =  theme['navbar_left_right_padding'] %}
+{% else %}
+    {% set navbar_left_right_padding = '1.5rem' %}
+{% endif %}
+
+
+{# Text color #}
+{% if theme['navbar_text_color'] %}
+    {% set navbar_text_color =  theme['navbar_text_color'] %}
+{% else %}
+    {% set navbar_text_color = 'text-primary' %}
+{% endif %}
+
+{# Position Order #}
+{% if theme['logo_order'] %}
+    {% set logo_order =  theme['logo_order'] %}
+{% else %}
+    {% set logo_order = 'order-1' %}
+{% endif %}
+
+{% if theme['menu_order'] %}
+    {% set menu_order =  theme['menu_order'] %}
+{% else %}
+    {% set menu_order = 'order-1' %}
+{% endif %}
+
+{% if theme['login_order'] %}
+    {% set login_order =  theme['login_order'] %}
+{% else %}
+    {% set login_order = 'order-1' %}
+{% endif %}
+
+{# Logo Size #}
+{% if theme['navbar_logo_size'] %}
+    {% set navbar_logo_size =  theme['navbar_logo_size'] %}
+{% else %}
+    {% set navbar_logo_size = '130px' %}
+{% endif %}
+
+{# Button Style #}
+{% if theme['navbar_button_style'] %}
+    {% set navbar_button_style =  theme['navbar_button_style'] %}
+{% else %}
+    {% set navbar_button_style = 'solid' %}
+{% endif %}
+
+<header class="header {{navbar_background_color}}" style="padding: {{navbar_top_bottom_padding}} {{navbar_left_right_padding}};" id="header">
+    <div class="container">
+        {% include 'widgets/logo.html.twig' %}
+        {% include 'widgets/menu.html.twig' %}
+    </div>
+</header>

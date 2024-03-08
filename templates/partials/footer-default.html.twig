@@ -1,0 +1,64 @@
+<footer class="footer-default slide-up {{footer_background_color}}">
+	<div class="container footer-default-container">
+		<div class="footer-default-top">
+			<div class="logo">
+
+				{% if theme['footer_logo'] %}
+					{% set imageIndex =  array_keys(theme['footer_logo'])[0] %}
+					{% set footer_logoArray = theme['footer_logo'][imageIndex] %}
+					{% set footer_logoPath = footer_logoArray['path'] %}
+					{% set footer_logo = url(footer_logoPath) %}
+				{% else %}
+					{% set footer_logo = url('theme://images/logo-footer.png') %}
+				{% endif %}
+
+				<div class="">
+					<img class="logo" src="{{ footer_logo }}" style="width: {{ footer_logo_size }}; height: auto;"/>
+				</div>
+
+			</div>
+
+			<div class="footer-default-menu">
+				<h4 class="footer-default-title {{footer_title_color}}">{{ "METRICALO.FOOTER_LINKS"|t|upper }}</h4>
+				<div class="frame-24">
+					{% for link in config.site.footer.links %}
+						{% set link_page = pages.find(link) %}
+						{% if link_page %}
+							<div class="menu-item">
+								<a rel="noopener noreferrer" class="{{footer_text_color}}" href="{{ link_page.url }}">{{ link_page.menu }}</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="footer-default-contact">
+				<h4 class="footer-default-title {{footer_title_color}}">{{ "METRICALO.CONTACT_INFO"|t|upper }}</h4>
+				<div class="flexcontainer">
+					{% include 'widgets/contact.html.twig' %}
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-default-cards"><img class="master" src="{{ url('theme://images/master.svg') }}"/>
+			<div class="visa-wrapper"><img class="visa" src="{{ url('theme://images/visa.svg') }}"/></div>
+		</div>
+
+		<div class="footer-default-bottom">
+			<p>{{ "METRICALO.COPYRIGHT"|t }}
+				{{ "now"|date('Y') }},
+				{{ data.business }}
+				-
+				{{ data.company.address }},
+				{{ data.company.city }},
+				{{ data.company.postcode }},
+				{{ data.company.country }}
+				-
+				{{ "METRICALO.RIGHTS_RESERVED"|t }}.</p>
+		</div>
+
+	</div>
+</footer>
+<style>
+	{% include 'partials/custom.css.twig' %}
+</style>

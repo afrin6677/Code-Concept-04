@@ -1,0 +1,41 @@
+.contact-blocks {
+  display: flex;
+  padding: 3rem 0rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    @include desktop-small {
+      flex-direction: column;
+    }
+
+    .card {
+      display: flex;
+      flex: 0 0 31%;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      flex-shrink: 0;
+
+      .card__image {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        align-self: stretch;
+      }
+
+      .card__text {
+        padding-left: 60px;
+      }
+    }
+  }
+}

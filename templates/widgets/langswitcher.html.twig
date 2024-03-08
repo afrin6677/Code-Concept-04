@@ -1,0 +1,29 @@
+{% extends 'partials/langswitcher-logic.html.twig' %}
+
+{% block language_block_start %}
+	<div class="languages" id="languages">
+		<div class="title">{{ "BSCOPE.SELECT_LANGUAGE"|t }}:</div>
+		<div class="frame">
+		{% endblock %}
+
+		{% block language_block_end %}
+		</div>
+		<div class="close-button" id="close-button">
+			<img class="vector" src="{{ url('theme://images/close.svg') }}"/>
+		</div>
+	</div>
+{% endblock %}
+
+{% block language_item %}
+	{% if show_language %}
+		{% set active_class = '' %}
+		{% if language == langswitcher.current %}
+			{% set active_class = 'font-bold text-white' %}
+		{% endif %}
+			{% set lang_icon = url('theme://images/lang/' ~ langswitcher.languages[loop.index - 1] ~ '.svg') %}
+			<a href="{{ lang_url ~ uri.params ~ (uri.query|length > 1 ? '?' ~ uri.query) }}" class="external lang-button {{ active_class }}">
+				<img class="img" src="{{ lang_icon }}"/>
+				<div class="text-wrapper-3">{% include 'partials/langswitcher-' ~ display_format ~ '.html.twig' %}</div>
+			</a>
+	{% endif %}
+{% endblock %}

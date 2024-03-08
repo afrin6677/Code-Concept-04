@@ -1,0 +1,28 @@
+<svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#240;&#159;&#166;&#134; icon &#34;Turkey&#34;">
+<g id="Mask group">
+<mask id="mask0_1_1116" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="27" height="20">
+<g id="Group">
+<path id="Vector" d="M0 0H26.6667V20H0V0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_1_1116)">
+<g id="Group_2">
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0V20H26.6667V0H0Z" fill="#E31D1C"/>
+<g id="Mask group_2">
+<mask id="mask1_1_1116" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="27" height="20">
+<g id="Group_3">
+<path id="Vector_3" fill-rule="evenodd" clip-rule="evenodd" d="M0 0V20H26.6667V0H0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_1_1116)">
+<g id="Group_4">
+<path id="Vector_4" fill-rule="evenodd" clip-rule="evenodd" d="M13.3546 13.4278C11.5701 12.9882 10.1725 11.4946 10.1888 9.30512C10.2039 7.25562 11.4448 5.52324 13.4064 5.05427C15.3681 4.5853 17.0951 5.58081 17.0951 5.58081C16.5529 4.30097 14.6694 3.40184 13.1253 3.40442C10.2509 3.40924 7.18686 5.74027 7.16045 9.30512C7.13307 13.0009 10.4416 15.1057 13.3514 15.1009C15.6842 15.0969 16.7907 13.501 17.0198 12.8221C17.0198 12.8221 15.139 13.8674 13.3546 13.4278ZM17.4194 8.60537L15.6416 9.25837L17.6476 9.96603L17.6133 12.0805L18.9352 10.4942L21.1186 10.6529L19.3883 9.16553L20.5243 7.57906L18.6747 8.20154L17.3527 6.73188L17.4194 8.60537Z" fill="#F7FCFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

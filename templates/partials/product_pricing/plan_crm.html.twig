@@ -1,0 +1,50 @@
+<div class="pricing">
+	<div class="pricing-content">
+
+		<div class="price">
+			<div class="type">
+				<div class="type-wrap">{{ product.name }}</div>
+			</div>
+			{# <p class="description">Descriptions</p> #}
+
+			<div class="pricing-group">
+				<span class="pricing-wrap">
+					<div class="price text-primary-color">
+						<h1>{{ product.pricing_plan.subscription_price|number_format(2, '.', ',') }}
+							{{ product.pricing_plan.currency }}</h1>
+
+					</div>
+				</span>
+
+				<span class="text-sm">/
+					{{ product.pricing_plan.subscription_interval_days }}
+					{% if product.pricing_plan.subscription_interval_days == 1 %}
+						{{ 'METRICALO.DAY'|t }}
+					{% else %}
+						{{ 'METRICALO.DAYS'|t }}
+					{% endif %}
+				</span>
+							{% if product.pricing_plan.subscription_trial_days %}
+				<p>{{ product.pricing_plan.subscription_trial_days }}
+					{{ "METRICALO.TRIAL_DAYS"|t }}</p>
+			{% endif %}
+
+				
+			</div>
+
+		</div>
+
+		<div class="benefits">
+			{% for benefit in product.all_benefits %}
+				<div class="benefit">
+					<img class="check" src="{{ url('theme://images/check.svg') }}"/>
+					<div class="streamline">{{ benefit|markdown(false) }}</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+	<div>
+		<a class="pricing-btn button" href="{{ url(product.purchase_url) }}">{{ "METRICALO.SIGNUP"|t }}</a>
+	</div>
+</div>

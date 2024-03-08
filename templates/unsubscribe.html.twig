@@ -1,0 +1,55 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+
+{% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/',
+                'title': "BSCOPE.LOGIN_HEADER_HOME"|t
+            },
+            {
+                'title': page.header.title|t
+            }
+        ]
+    } %}
+
+<section id="unsubscribe" >
+    <div class="unsubscribe-container">
+       
+        <div class="">
+            {% include 'partials/notifications.html.twig' %}
+            {% include 'partials/messages.html.twig' %}
+
+            <h4 class="form-title">Do you really want to cancel the subscription?</h4>
+            
+            <form method="post" action="#" class="">
+                <div class="form-field">
+                    <label class="form-label capitalize text-white">Email</label>
+                    <div class="form-data" data-grav-field="text" data-grav-disabled="" data-grav-default="null">
+                        <div class="form-input-wrapper ">
+                            <input name="email" type="email" class="form-input" placeholder="olivia@exmample.com" autofocus="autofocus">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label class="form-label capitalize text-white">Card Pin</label>
+                    <div class="form-data" data-grav-field="password" data-grav-disabled="" data-grav-default="null">
+                        <div class="form-input-wrapper ">
+                            <input name="password" type="password" class="form-input" placeholder="1234">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="form-action-wrapper">
+                        <button class="button primary" type="submit" name="task" value="login.login">Send</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+       
+    </div>
+</section>
+{% endblock %}

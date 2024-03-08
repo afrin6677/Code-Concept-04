@@ -1,0 +1,487 @@
+name: Code Concept 04
+slug: codeconcept04
+type: theme
+version: 0.1.0
+description: Custom Skeleton Webshop theme that extends the Metricalo Base theme
+icon: shopping-basket
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  fields:
+
+    content:
+      unset@: true
+
+    css_section:
+      type: section
+      title: Css Section
+      underline: true
+      fields:
+        css_scripts:
+          type: textarea
+          rows: 10
+          label: Extra  Custom Css
+          placeholder: '.hero-image{
+            width:80% !important;
+          }
+
+          '
+
+    settings_section:
+      type: section
+      title: Settings
+      underline: true
+      fields:
+        body_background_color:
+          label: Body Background
+          type: colorpicker
+          default: '#ffffff'
+
+    navbar_section:
+      type: section
+      title: Navbar Section
+      underline: true
+      fields:
+        logo_order:
+          label: Logo Position
+          type: selectize
+          selectize:
+            options:
+              - text: "Logo Left"
+                value: "order-1"
+              - text: "Logo Middle"
+                value: "order-2"
+              - text: "Logo Right"
+                value: "order-3"
+
+        menu_order:
+          label: Menu Position
+          type: selectize
+          selectize:
+            options:
+              - text: "Menu Left"
+                value: "order-1"
+              - text: "Menu Middle"
+                value: "order-2"
+              - text: "Menu Right"
+                value: "order-3"
+
+
+        login_order:
+          label: Menu Button Position
+          type: selectize
+          selectize:
+            options:
+              - text: "Button Left"
+                value: "order-1"
+              - text: "Button Middle"
+                value: "order-2"
+              - text: "Button Right"
+                value: "order-3"
+
+        logo_flex_basis:
+          label: Logo Area Width
+          type: selectize
+          selectize:
+            options:
+              - text: "25%"
+                value: "flex-basis-25"
+              - text: "50%"
+                value: "flex-basis-50"
+              - text: "75%"
+                value: "flex-basis-75"
+              - text: "100%"
+                value: "flex-basis-100"
+
+        menu_flex_basis:
+          label: Menu Area Width
+          type: selectize
+          selectize:
+            options:
+              - text: "25%"
+                value: "flex-basis-25"
+              - text: "50%"
+                value: "flex-basis-50"
+              - text: "75%"
+                value: "flex-basis-75"
+              - text: "100%"
+                value: "flex-basis-100"
+
+        login_flex_basis:
+          label: Menu Button Area Width
+          type: selectize
+          selectize:
+            options:
+              - text: "25%"
+                value: "flex-basis-25"
+              - text: "50%"
+                value: "flex-basis-50"
+              - text: "75%"
+                value: "flex-basis-75"
+              - text: "100%"
+                value: "flex-basis-100"
+
+        navbar_button_style:
+          label: Navbar Button Style
+          type: selectize
+          selectize:
+            options:
+              - text: "Solid"
+                value: "button"
+              - text: "Outline Button"
+                value: "button-outline"
+              - text: "Primary Gradient"
+                value: "button-gradient-primary"
+              - text: "Secondary Gradient"
+                value: "button-gradient-secondary"
+              - text: "Transparent"
+                value: "button-transparent"
+
+        navbar_background_color:
+          label: Navbar Background Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "bg-primary"
+              - text: "Primary Light"
+                value: "bg-primary-light"
+              - text: "Black"
+                value: "bg-dark"
+              - text: "White"
+                value: "bg-white"
+              - text: "Secondary"
+                value: "bg-secondary"
+              - text: "Secondary light"
+                value: "bg-secondary-light"
+              - text: "Grey"
+                value: "bg-grey"
+              - text: "Purple"
+                value: "bg-purple"
+              - text: "Tertiary"
+                value: "bg-tertiary"
+              - text: "Gradient"
+                value: "bg-gradient"
+              - text: "Gradient Secondary"
+                value: "bg-gradient-secondary"
+              - text: "Transparent"
+                value: "bg-transparent"
+
+
+        navbar_text_color:
+          label: Navbar Text Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "text-primary"
+              - text: "Primary Light"
+                value: "text-primary-light"
+              - text: "Secondary"
+                value: "text-secondary"
+              - text: "Secondary light"
+                value: "text-secondary-light"
+              - text: "Grey"
+                value: "text-grey"
+              - text: "Purple"
+                value: "text-purple"
+              - text: "Tertiary"
+                value: "text-tertiary"
+              - text: "gradient"
+                value: "text-gradient"
+              - text: "gradient-secondary"
+                value: "text-gradient-secondary"
+              - text: "Black"
+                value: "text-dark"
+              - text: "White"
+                value: "text-white"
+
+        navbar_logo_size:
+          label: Navbar Logo Size (Example - 1rem or 16px)
+          type: text
+
+        footer_logo_size:
+          label: Footer Logo Size (Example - 1rem or 16px)
+          type: text
+
+        navbar_top_bottom_padding:
+          label: Navbar Top Bottom Padding (Example - 1rem or 16px)
+          type: text
+
+        navbar_left_right_padding:
+          label: Navbar Left Right Padding (Example - 1rem or 16px)
+          type: text
+
+
+    breadcrumb_section:
+      type: section
+      title: Breadcrumb Section
+      underline: true
+      fields:
+        breadcrumb:
+          label: Breadcrumb Background
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "bg-primary"
+              - text: "Primary Light"
+                value: "bg-primary-light"
+              - text: "Black"
+                value: "bg-dark"
+              - text: "White"
+                value: "bg-white"
+              - text: "Secondary"
+                value: "bg-secondary"
+              - text: "Secondary light"
+                value: "bg-secondary-light"
+              - text: "Grey"
+                value: "bg-grey"
+              - text: "Purple"
+                value: "bg-purple"
+              - text: "Tertiary"
+                value: "bg-tertiary"
+              - text: "gradient"
+                value: "bg-gradient"
+              - text: "gradient-secondary"
+                value: "bg-gradient-secondary"
+
+        breadcrumb_text_color:
+          label: Breadcrumb Text Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "text-primary"
+              - text: "Primary Light"
+                value: "text-primary-light"
+              - text: "Black"
+                value: "text-dark"
+              - text: "White"
+                value: "text-white"
+              - text: "Secondary"
+                value: "text-secondary"
+              - text: "Secondary light"
+                value: "text-secondary-light"
+              - text: "Grey"
+                value: "text-grey"
+              - text: "Purple"
+                value: "text-purple"
+              - text: "Tertiary"
+                value: "text-tertiary"
+              - text: "gradient"
+                value: "text-gradient"
+              - text: "gradient-secondary"
+                value: "text-gradient-secondary"
+
+    logo_section:
+      type: section
+      title: Logo Section
+      underline: true
+      fields:
+        favicon:
+          type: file
+          label: Favicon
+          destination: './images/'
+        logo:
+          type: file
+          label: Logo
+          destination: './images/'
+        footer_logo:
+          type: file
+          label: Footer Logo
+          destination: './images/'
+        dark_logo:
+          type: file
+          label: Dark Logo
+          destination: './images/'
+
+    footer_style_section:
+      type: section
+      title: Footer Style Section
+      underline: true
+      fields:
+        footer_style:
+          label: Footer Style
+          type: selectize
+          selectize:
+            options:
+              - text: "Default"
+                value: "default"
+              - text: "Logo Right"
+                value: "logo-right"
+              - text: "Logo Top"
+                value: "logo-top"
+              - text: "Payment Logo Right"
+                value: "payment-logo-right"
+
+
+        footer_background_color:
+          label: Footer Background Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "bg-primary"
+              - text: "Primary Light"
+                value: "bg-primary-light"
+              - text: "Black"
+                value: "bg-dark"
+              - text: "White"
+                value: "bg-white"
+              - text: "Secondary"
+                value: "bg-secondary"
+              - text: "Secondary light"
+                value: "bg-secondary-light"
+              - text: "Grey"
+                value: "bg-grey"
+              - text: "Purple"
+                value: "bg-purple"
+              - text: "Tertiary"
+                value: "bg-tertiary"
+              - text: "gradient"
+                value: "bg-gradient"
+              - text: "gradient-secondary"
+                value: "bg-gradient-secondary"
+
+        footer_title_color:
+          label: Footer Title Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "text-primary"
+              - text: "Primary Light"
+                value: "text-primary-light"
+              - text: "Black"
+                value: "text-dark"
+              - text: "White"
+                value: "text-white"
+              - text: "Secondary"
+                value: "text-secondary"
+              - text: "Secondary light"
+                value: "text-secondary-light"
+              - text: "Grey"
+                value: "text-grey"
+              - text: "Purple"
+                value: "text-purple"
+              - text: "Tertiary"
+                value: "text-tertiary"
+              - text: "gradient"
+                value: "text-gradient"
+              - text: "gradient-secondary"
+                value: "text-gradient-secondary"
+
+        footer_text_color:
+          label: Footer Text Color
+          type: selectize
+          selectize:
+            options:
+              - text: "Primary"
+                value: "text-primary"
+              - text: "Primary Light"
+                value: "text-primary-light"
+              - text: "Black"
+                value: "text-dark"
+              - text: "White"
+                value: "text-white"
+              - text: "Secondary"
+                value: "text-secondary"
+              - text: "Secondary light"
+                value: "text-secondary-light"
+              - text: "Grey"
+                value: "text-grey"
+              - text: "Purple"
+                value: "text-purple"
+              - text: "Tertiary"
+                value: "text-tertiary"
+              - text: "gradient"
+                value: "text-gradient"
+              - text: "gradient-secondary"
+                value: "text-gradient-secondary"
+
+    notices_section:
+      type: section
+      title: Notices
+      underline: true
+
+      fields:
+
+        notices:
+          type: list
+          label:
+          style: vertical
+          collapsed: true
+
+          fields:
+
+            .content:
+              type: text
+              label: Notice Content
+            .enabled:
+              type: toggle
+              label: Enabled
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            .only_homepage:
+              type: toggle
+              label: Only Homepage
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            .type:
+              type: select
+              label: Type
+              default: alert
+              options:
+                alert: Alert (blue)
+                critical: Critical (red)
+                note: Note (yellow)
+            .learn_more_link:
+              type: text
+              label: Learn More Link
+
+    footer_section:
+      type: section
+      title: Footer Section
+      underline: true
+
+      fields:
+        footer.links:
+          type: array
+          label: Footer Links
+          value_only: true
+
+    tracking_section:
+      type: section
+      title: Tracking Section
+      underline: true
+      fields:
+        tracking_envs:
+          type: selectize
+          size: large
+          label: Tracking Environments
+          classes: fancy
+          validate:
+            type: commalist
+        tracking_scripts:
+          type: textarea
+          rows: 10
+          label: Tracking Scripts
+          placeholder: <script>console.log('tracking script example');</script>
+
+    summary:
+      ordering@: 99
+
+    routes:
+      ordering@: 99

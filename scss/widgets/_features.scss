@@ -1,0 +1,184 @@
+.features {
+  display: flex;
+  padding: 100px 80px;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  // background: var(--color-bg, #f0f0f8);
+
+  @include desktop-small {
+    padding: 3rem 1rem;
+  }
+
+  .features-header-section {
+    text-align: center;
+    width: 80%;
+    color: var(--color-secondary);
+
+    h4 {
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px;
+      color: var(--color-black);
+    }
+  }
+
+  .block-title {
+    color: var(--color-black);
+    // width: 60%;
+    text-align: center;
+    font-size: 48px;
+
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px; /* 125% */
+    letter-spacing: -0.96px; 
+
+    @include desktop-small {
+      font-size: 36px;
+    }
+
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+  }
+
+  .features-container {
+    display: flex;
+    padding: 2.5rem 0.625rem;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+
+    @include desktop-small {
+      padding: 2.5rem 0;
+      flex-direction: column;
+    }
+
+    .feature-content{
+      display: flex;
+      gap: 16px;
+
+      p {
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--color-secondary);
+      }
+    }
+
+    .feature-title h4{
+      // Styles specific to when 'special-class' is present on the same element
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      color: var(--color-secondary);
+    }
+
+    .feature {
+      display: flex;
+      padding: 24px;
+      align-items: flex-start;
+      gap: 0.75rem;
+      flex-shrink: 0;
+      cursor: pointer;
+      // border-radius: 0.625rem;
+      // background: #fff;
+      // box-shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+      transition: all 0.3s ease-in-out;
+      /* Add a smooth transition effect */
+      flex: 40%;
+      align-self: stretch;
+
+      &.small-header {
+        .feature-title {
+          // Styles specific to when 'special-class' is present on the same element
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 28px;
+        }
+
+        p {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          /* 155.556% */
+        }
+      }
+
+      &.apply-border {
+        border: 2px solid var(--color-border);
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        transform: translateY(-.15rem);
+        /* Adjust the values as needed */
+      }
+
+      @include desktop-small {
+        flex: auto;
+      }
+
+      p {
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--color-secondary);
+      }
+
+      .feature-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 18px;
+        align-self: stretch;
+
+        
+
+        $icon-size: 91px;
+
+        .icon-container {
+          width: $icon-size;
+          height: $icon-size;
+
+          &.rounded {
+            border-radius: 50%;
+          }
+
+          overflow: hidden;
+          border: 8px solid #F5FBFF;
+          background: #E0EAFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            // width: $icon-size;
+            // height: $icon-size;
+            width: 100%;
+            padding: 8px;
+            object-fit: cover; // This property ensures the image covers the entire container without distorting its aspect ratio
+          }
+        }
+      }
+    }
+  }
+}

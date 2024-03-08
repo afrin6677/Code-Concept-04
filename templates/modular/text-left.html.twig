@@ -1,0 +1,20 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_left %}
+{% set image = page.media[page.header.text_left.image] %}
+
+{% block render_block %}
+	<div class="paragraph text-left slide-up {{ module.classes }}">
+		<div class="container text-left-container">
+			<div class="paragraph-image">
+				<img class="theme-shadow" src="{{ image.url }}"/>
+			</div>
+			<div class="text-left-text">
+				<div class="block-title">
+					<h3>{{ module.title.translatable }}</h3>
+				</div>
+				<p>{{ page.content|raw }}</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

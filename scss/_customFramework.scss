@@ -1,0 +1,603 @@
+/*
+    Name : Custom SCSS Framework
+    Author : Md. Alamin
+    Version: v0.5.0
+*/
+
+/* Container */
+.c-container {
+    max-width: 1000px;
+    width: 100%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container */
+  }
+
+.c-container-md{
+    max-width: 1200px;
+    width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container */
+    
+
+    @include sm-mobile {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    @include md-mobile {
+        display: block;
+    }
+    
+    @include mobile {
+        display: block;
+    }
+    
+    @include tablet {
+        display: block;
+        align-items: center;
+    }
+    
+    @include desktop-small {
+        display: block;
+        align-items: center;
+    }
+}
+  
+  /* Full-width Container */
+  .container-full {
+    width: 100%;
+    margin: 0;
+  }
+  
+  /* Row */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* Adjust for gutters, if any */
+
+    @include sm-mobile {
+        display: block;
+    }
+    
+    @include md-mobile {
+        display: block;
+    }
+    
+    @include mobile {
+        display: block;
+    }
+    
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
+    
+    @include desktop-small {
+        display: flex;
+        align-items: center;
+    }
+  }
+
+  .gap {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  /* Columns */
+  .col {
+    flex: 1;
+    padding: 0 15px; /* Adjust for gutters, if any */
+
+  }
+  
+  /* 12 Column Grid System */
+.col-1 { 
+    flex-basis: 8.33%; 
+
+    @include sm-mobile {
+        flex-basis: 0 0 100%;
+    }
+    
+    @include md-mobile {
+        flex-basis: 0 0 50%;
+    }
+    
+    @include mobile {
+        flex-basis: 0 0 33.33%;
+    }
+    
+    @include tablet {
+        flex-basis: 0 0 25%;
+    }
+    
+    @include desktop-small {
+        flex-basis: 0 0 20%;
+    }
+}
+.col-2 { 
+    flex-basis: 16.66%; 
+
+    @include sm-mobile {
+        flex-basis: 0 0 100%;
+    }
+    
+    @include md-mobile {
+        flex-basis: 0 0 50%;
+    }
+    
+    @include mobile {
+        flex-basis: 0 0 33.33%;
+    }
+    
+    @include tablet {
+        flex-basis: 0 0 25%;
+    }
+    
+    @include desktop-small {
+        flex-basis: 0 0 20%;
+    }
+}
+.col-3 { flex-basis: 25%; }
+.col-4 { 
+    flex-basis: 33.33%;
+
+    @include sm-mobile {
+        flex-basis: 100%;
+    }
+    
+    @include md-mobile {
+        flex-basis: 100%;
+    }
+
+    @include mobile {
+        flex-basis: 100%;
+    }
+
+    @include tablet {
+        flex-basis: 100%;
+    }
+
+    @include desktop-small {
+        flex-basis: 100%;
+    }
+
+}
+.col-5 { flex-basis: 41.66%; }
+.col-6 { 
+    flex-basis: 50%; 
+
+    @include sm-mobile {
+        flex-basis: 100%;
+    }
+    
+    @include md-mobile {
+        flex-basis: 100%;
+    }
+    
+    @include mobile {
+        flex-basis: 100%;
+        align-items: center;
+    }
+    
+    @include tablet {
+        flex-basis: 100%;
+        align-items: center;
+    }
+    
+    @include desktop-small {
+        flex-basis: 100%;
+    }
+}
+.col-7 { flex-basis: 58.33%; }
+.col-8 { flex-basis: 66.66%; }
+.col-9 { flex-basis: 75%; }
+.col-10 { flex-basis: 83.33%; }
+.col-11 { flex-basis: 91.66%; }
+.col-12 { flex-basis: 100%; }
+
+ /* Responsive Styles */
+@include sm-mobile {
+    .col { flex: 0 0 100%; }
+}
+  
+  @include md-mobile {
+    .col-sm { flex: 0 0 50%; }
+  }
+  
+  @include mobile {
+    .col-md { flex: 0 0 33.33%; }
+  }
+  
+  @include tablet {
+    .col-lg { flex: 0 0 25%; }
+  }
+  
+  @include desktop-small {
+    .col-xl { flex: 0 0 20%; }
+  }
+  
+  /* Responsive Styles for .col-1 above 5 devices */
+  @media (min-width: 1200px) {
+    .col-1 { flex: 0 0 8.33%; }
+  }
+  
+  .widthFull{
+    width: 100%;
+  }
+
+  .widthHalf{
+    width: 50%;
+  }
+
+// Text Align
+
+.textCenter{
+    text-align: center;
+}
+
+.textLeft{
+    text-align: left;
+}
+
+//Text Color
+.textWhite{
+    color: var(--color-white) !important;
+}
+
+.textDark{
+    color: var(--color-black) !important;
+}
+.textPrimary{
+    color: var(--color-primary);
+}
+
+.textPrimaryLight{
+    color: var(--color-primary-light);
+}
+
+.text-color-gold{
+    color: gold;
+}
+
+.textMute-1{
+    color: var(--color-mute-1) !important;
+}
+
+.textMute-2{
+    color: var(--color-mute-2) !important;
+}
+
+.textMute-3{
+    color: var(--color-mute-3) !important;
+}
+
+
+//Background Color
+.bgWhite{
+    background: var(--color-white) !important;
+}
+.bgDark{
+    background: var(--color-black) !important;
+}
+.bgPrimary{
+    background: var(--color-primary);
+}
+
+.bgPrimaryLight{
+    background: var(--color-primary-light);
+}
+
+// Flex
+.dInline{
+    display: inline;
+}
+.dFlex{
+    display: flex;
+}
+.flexColumn{
+    flex-direction: column;
+}
+.flexItemCenter{
+    align-items: center;
+}
+.flexGap-1{
+    gap: 5px;
+}
+.flexGap-2{
+    gap: 10px;
+}
+.flexGap-3{
+    gap: 15px;
+}
+.flexGap-4{
+    gap: 20px;
+}
+.justifyCenter{
+    justify-content: center;
+}
+
+.justifyBetween{
+    justify-content: space-between;
+}
+
+.justifyStart{
+    justify-content: start;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+
+// Margin
+.sectionM{
+    margin: 3rem;
+}
+.sectionTBM{
+    margin: 3rem 0;
+}
+
+.sectionTBMmd{
+    margin: 4rem 0;
+}
+
+.sectionTBMxl{
+    margin: 7rem 0;
+}
+
+.sectionLRM{
+    margin: 0 3rem;
+}
+
+.marginTBsm{
+    margin: 10px 0;
+}
+
+.marginTBmd{
+    margin: 20px 0;
+}
+
+.marginTBxl{
+    margin: 30px 0;
+}
+
+
+.marginTmd{
+    margin-top: 20px;
+}
+
+//Padding
+.sectionP{
+    padding: 3rem;
+}
+.sectionTBP{
+    padding: 3rem 0;
+}
+
+.sectionLRP{
+    padding: 0 3rem;
+}
+
+.padding{
+    padding: 1rem;
+}
+//Padding Top
+.paddingTsm{
+    padding-top: 0.5rem;
+}
+.paddingTmd{
+    padding-top: 1rem;
+}
+.paddingTlg{
+    padding-top: 2rem;
+}
+.paddingTxl{
+    padding-top: 3rem;
+}
+
+//Padding Botton
+.paddingBsm{
+    padding-bottom: 0.5rem;
+}
+.paddingBmd{
+    padding-bottom: 1rem;
+}
+.paddingBlg{
+    padding-bottom: 2rem;
+}
+.paddingBxl{
+    padding-bottom: 3rem;
+}
+
+.paddingXsm{
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.paddingX{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.paddingXmd{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+.paddingXxl{
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+
+.paddingYsm{
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.paddingY{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+
+.paddingYmd{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+//Heading size
+.heading2xl{
+    font-size: 72px;
+}
+
+.headingXl{
+    font-size: 60px;
+}
+
+.headingLg{
+    font-size: 48px;
+}
+
+.headingMd{
+    font-size: 36px;
+}
+
+.headingSm{
+    font-size: 30px;
+}
+
+.headingXs{
+    font-size: 24px;
+}
+
+//Text size
+.textXl{
+    font-size: 20px;
+}
+
+.textLg{
+    font-size: 18px;
+}
+
+.textMd{
+    font-size: 16px;
+}
+
+.textSm{
+    font-size: 14px;
+}
+
+.textXs{
+    font-size: 12px;
+}
+
+//Border
+.border{
+    border: 0.5px solid var(--color-bg);
+}
+
+.borderSm{
+    border: 1px solid var(--color-bg);
+}
+
+.borderMd{
+    border: 1.5px solid var(--color-bg);
+}
+
+.borderXl{
+    border: 2px solid var(--color-bg);
+}
+
+//Font Weight/Bold
+.font-bold-sm{
+    font-weight: 600px !important;
+}
+.font-bold{
+    font-weight: 700px !important;
+}
+
+//Height
+.h-1{
+    height: 10px;
+}
+.h-2{
+    height: 20px;
+}
+.h-3{
+    height: 30px;
+}
+.h-4{
+    height: 40px;
+}
+.h-5{
+    height: 50px;
+}
+
+//H1 with span
+h1 span {
+    color: var(--color-primary);
+}
+
+h2 span {
+    color: var(--color-primary);
+}
+
+h3 span {
+    color: var(--color-primary);
+}
+
+
+//Background
+
+.bg{
+    background: var(--color-bg);
+  }
+  .bg-1{
+    background: var(--color-bg-1);
+  }
+  .bg-2{
+    background: var(--color-bg-2);
+  }
+  .bg-3{
+    background: var(--color-bg-3);
+  }
+  .bg-4{
+    background: var(--color-bg-4);
+  }
+  .bgWhite{
+    background: #fff;
+  }
+
+  //Border Radius
+  .borderRadius{
+    border-radius: 7px;
+  }
+  .borderRadiusMd{
+    border-radius: 12px;
+  }
+  .borderRadiusLg{
+    border-radius: 1rem;
+  }
+
+  //Shadow
+  .shadow {
+    box-shadow: 0px 0px 11px 1px #dadada;
+}
+
+//Line Height
+.lineHeightSm{
+    line-height: 0.6rem;
+}
+
+.lineHeight{
+    line-height: 1rem;
+}
+
+.lineHeightMd{
+    line-height: 1.5rem;
+}
+
+.lineHeightLg{
+    line-height: 2rem;
+}
+
+.lineHeightXl{
+    line-height: 2.5rem;
+}

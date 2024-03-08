@@ -1,0 +1,62 @@
+.form-login-wrapper {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  max-width: 850px;
+  margin: 0 auto;
+  padding-right: 25px;
+  padding-left: 25px;
+
+  .form-data.rememberme {
+    margin-top: 30px;
+
+    label {
+      display: inline-block;
+    }
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+    appearance: auto;
+    display: inline-block;
+  }
+
+  #grav-login {
+    h1, h2, h3, h4 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    & > p {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .form-actions .button {
+      display: inline-block;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: var(--color-primary);
+      background-image: none;
+      --animate-duration: 1s;
+      --animate-repeat: 1;
+      --animate-delay: 0.5s;
+      transition: all .2s ease-in-out;
+      padding: 10px 30px;
+      font-size: 18px;
+
+      @include desktop-small {
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        transform: translateY(-.15rem);
+        box-shadow: 0 0.25rem 0.75rem rgba(30, 34, 40, .15);
+      }
+    }
+
+    .form-action-wrapper {
+      text-align: center;
+      margin-top: 25px;
+    }
+  }
+}

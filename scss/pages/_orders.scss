@@ -1,0 +1,39 @@
+.orders-table-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: $content-bottom-margin;
+  padding-top: $content-bottom-margin;
+
+  table {
+    margin: auto;
+    border-left: solid 1px rgb(221, 221, 221);
+    border-top: solid 1px rgb(221, 221, 221);
+
+    @media all and (max-width: 918px) {
+      display: block;
+      overflow-x: scroll;
+    }
+
+    thead {
+      background-color: #f5f5f5;
+    }
+
+    th, td {
+      padding: 5px 15px 3px 15px;
+      border-right: solid 1px #e3e3e3;
+      border-bottom: solid 1px #e3e3e3;
+    }
+
+    td a.btn {
+      vertical-align: middle;
+      text-decoration: none;
+
+      svg {
+        vertical-align: middle;
+        margin-right: 4px;
+        margin-top: -1px;
+      }
+    }
+  }
+}

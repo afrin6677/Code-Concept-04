@@ -1,0 +1,35 @@
+form[name="contact-us"] {
+  width: 100%;
+  
+  .form-textarea-wrapper {
+    label.error {
+      bottom: -30px;
+    }
+  }
+  .form-actions {
+    margin-top: 32px;
+    .button {
+      width: 100%;
+      border-radius: 0%;
+      background-color: var(--color-secondary);
+      color: var(--color-tertiary);
+
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30px;
+
+    }
+  }
+  .form-field:nth-child(1),
+  .form-field:nth-child(2) {
+    width: calc(50% - 3px);
+    /* Adjust width based on your design */
+    display: inline-block;
+    @include desktop-small {
+      width: 100%;
+      display: block;
+    }
+  }
+}

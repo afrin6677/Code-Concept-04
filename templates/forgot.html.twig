@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/',
+                'title': "BSCOPE.LOGIN_HEADER_HOME"|t
+            },
+            {
+                'title': "BSCOPE.LOGIN_HEADER_FORGOT"|t
+            }
+        ]
+    } %}
+
+    <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 login-page-content wrapper bg-light angled upper-end slide-up">
+        <div class="form-login-wrapper">
+            {% include 'partials/notifications.html.twig' %}
+            {% include 'partials/messages.html.twig' %}
+            {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}
+        </div>
+    </article>
+{% endblock %}

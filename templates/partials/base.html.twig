@@ -1,0 +1,138 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set script_version = 8 %}
+
+{% block render_block %}
+	<!DOCTYPE html>
+	<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+		<head>
+			{% block head %}
+				<meta charset="utf-8"/>
+				<title>
+					{% if header.title %}
+						{{ header.title|e }}
+						|
+					{% endif %}
+					{{ site.title|e }}</title>
+
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				{% include 'partials/metadata.html.twig' %}
+
+				{% if theme['favicon'] %}
+					{% set imageIndex =  array_keys(theme['favicon'])[0] %}
+					{% set faviconArray = theme['favicon'][imageIndex] %}
+					{% set faviconPath = faviconArray['path'] %}
+					{% set favicon = url(faviconPath) %}
+				{% else %}
+					{% set favicon = url('theme://images/favicon.png') %}
+				{% endif %}
+
+				<link rel="icon" type="image/svg" href="{{ favicon|e }}"/>
+				<link rel="canonical" href="{{ page.url(true, true)|e }}"/>
+			{% endblock head %}
+
+			{% block stylesheets %}
+				{% do assets.addCss('theme://dist/css/styles.css?v=' ~ script_version, 100) %}
+				{% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', 100) %}
+				{% set tailwind_theme %}
+				{% include 'partials/theme.css.twig' %}
+				{% endset %}
+				{% do assets.addInlineCss(tailwind_theme) %}
+			{% endblock %}
+
+			{% block javascripts %}
+				{% do assets.addJs('https://code.jquery.com/jquery-3.7.1.min.js', {group: 'bottom', loading: 'defer'}) %}
+				{% do assets.addJs('https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js', {group: 'bottom', loading: 'defer'}) %}
+				{% do assets.addJs('https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js', {group: 'bottom', loading: 'defer'}) %}
+
+				{% do assets.addJs('theme://dist/js/script.js?v=' ~ script_version, {group: 'bottom', loading: 'defer'}) %}
+				{% do assets.addJs(site_js, {group: 'bottom', loading: 'defer'}) %}
+			{% endblock %}
+
+			{% block assets deferred %}
+				{{ assets.css()|raw }}
+				{{ assets.js()|raw }}
+			{% endblock %}
+		</head>
+		{% block body %}
+
+		{% if theme['body_background_color'] %}
+			{% set body_background_color = theme['body_background_color'] %}
+		{% endif %}
+
+
+			<body class="{{ body_classes|e }} {{ config.system.debugger.enabled ? 'debug-screens' }}" style="background: {{ body_background_color }} !important;">
+				<div id="overlay" class="overlay"></div>
+
+				{% block header %}
+					{% include 'partials/header.html.twig' %}
+				{% endblock header %}
+
+				{% include 'widgets/cheeseburger-menu.html.twig' %}
+
+				{% block article %}
+					<article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24">
+						<div class="prose max-w-none pt-12">
+							{% block content %}{% endblock %}
+						</div>
+					</article>
+				{% endblock article %}
+
+				{% block footer %}
+
+					{# Background Color #}
+					{% if theme['footer_background_color'] %}
+						{% set footer_background_color = theme['footer_background_color'] %}
+					{% else %}
+						{% set footer_background_color = 'bg-white' %}
+					{% endif %}
+
+					{# Title Color #}
+					{% if theme['footer_title_color'] %}
+						{% set footer_title_color = theme['footer_title_color'] %}
+					{% else %}
+						{% set footer_title_color = 'text-dark' %}
+					{% endif %}
+
+					{# Text Color #}
+					{% if theme['footer_text_color'] %}
+						{% set footer_text_color = theme['footer_text_color'] %}
+					{% else %}
+						{% set footer_text_color = 'text-dark' %}
+					{% endif %}
+
+					{# Logo Size #}
+					{% if theme['footer_logo_size'] %}
+						{% set footer_logo_size =  theme['footer_logo_size'] %}
+					{% else %}
+						{% set footer_logo_size = '130px' %}
+					{% endif %}
+
+
+					{% set footer_style = theme['footer_style'] %}
+
+					{% if footer_style == 'logo-right' %}
+						{% include 'partials/footer-right-logo.html.twig' %}
+					{% elseif footer_style == 'logo-top' %}
+						{% include 'partials/footer-top-logo.html.twig' %}
+					{% elseif footer_style == 'payment-logo-right' %}
+						{% include 'partials/footer-right-payment-logo.html.twig' %}
+
+					{% else %}
+						{# Default #}
+						{% include 'partials/footer-default.html.twig' %}
+					{% endif %}
+				{% endblock footer %}
+
+				{% include 'partials/notifications.html.twig' %}
+				{% include 'widgets/langswitcher.html.twig' %}
+				{% include 'widgets/cookie-modal.html.twig' %}
+
+				{% block bottom %}
+					{{ assets.js('bottom')|raw }}
+				{% endblock bottom %}
+			</body>
+		{% endblock body %}
+	</html>
+{% endblock render_block %}

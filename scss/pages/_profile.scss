@@ -1,0 +1,49 @@
+.btn__simple.my-orders {
+  font-size: 1.3rem;
+  text-decoration: none;
+
+  svg {
+    vertical-align: middle;
+    margin-top: -4px;
+  }
+}
+
+.content-section-profile {
+  display: flex;
+  justify-content: center;
+  gap: 5.625rem;
+  align-self: stretch;
+  background: #fefefe;
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  margin-bottom: $content-bottom-margin;
+
+  .paragraph-column > .form-actions {
+    margin-top: 35px;
+  }
+
+  @media all and (max-width: 490px) {
+    display: block;
+
+    .paragraph-column {
+      width: 100%;
+      margin-bottom: 45px;
+    }
+
+    .form-actions a {
+      margin-bottom: 10px;
+    }
+  }
+
+  .button,
+  button {
+    width: auto;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}

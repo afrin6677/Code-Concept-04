@@ -1,0 +1,25 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.hero %}
+{% block render_block %}
+  {% set image = page.media[page.header.hero.image] %}
+
+  {% set bg = page.media[page.header.hero.hero_bg].url ?? '' %}
+    <div class="hero {{ module.size == 'medium' ? 'medium' : '' }}"
+         style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+        <div class="container hero-container {{ module.classes }}">
+            <div class="hero-text {{ module.classes == 'text_image_center' ? 'hero_text_center' : 'hero_text_left' }}">
+                <h1 class="slide-in">
+                    {{ module.h1.translatable|striptags('<span>')|raw }}
+                </h1>
+                <div class="hero-image hidden-on-lg"><img class="zoom-in-image" src="{{ image.url }}" /></div>
+                <p class="slide-in">{{ module.text.translatable }}</p>
+
+                {% for button in module.buttons  %}
+                    <a class="button slide-in" href="{{ button.link }}">{{ button.text.translatable }} </a>
+                {% endfor %}
+            </div>
+            <div class="hero-image hidden flex-on-lg"><img class="zoom-in-image" src="{{ image.url }}" /></div>
+        </div>
+    </div>
+{% endblock %}

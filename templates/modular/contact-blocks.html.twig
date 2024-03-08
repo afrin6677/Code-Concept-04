@@ -1,0 +1,19 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% block render_block %}
+    <div class="contact-blocks slide-up">
+        <div class="container">
+            {% for contact_block in page.header.contact_blocks %}
+            <div class="card">
+                {% set icon = page.media[contact_block.icon] %}
+                <div class="card__image"><img class="icon" src="{{ icon.url }}" />
+                    <h4>{{ contact_block.title.translatable }}</h4>
+                </div>
+                <div class="card__text">
+                    <p>{{ contact_block.description.translatable }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% block render_block %}
+	{#  {% cache 'pricing-' ~ grav.language.getActive %}#}
+	{% set product_pricing = website_manager_api.getProductPricing %}
+	<div class="pricings" id="modular_pricing">
+		<h3 class="block-title">{{ page.title }}</h3>
+
+		<div class="container pricings-container">
+			{% if config.data.source == 'WSM' %}
+				{% include 'partials/product_pricing/pricing_wsm.html.twig' with {products: product_pricing.data } %}
+			{% else %}
+				{% include 'partials/product_pricing/pricing_crm.html.twig' with {products: product_pricing.data.products } %}
+			{% endif %}
+		</div>
+	</div>
+	{#  {% endcache %}#}
+{% endblock %}

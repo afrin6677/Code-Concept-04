@@ -1,0 +1,32 @@
+title: Contact
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.contact_blocks_section:
+              ordering@: 4
+              type: section
+              title: Contact blocks
+              underline: false
+              label: false
+              fields:
+                header.contact_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Icon
+            header.media_order:
+                ordering@: 99

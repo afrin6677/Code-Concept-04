@@ -1,0 +1,43 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set promo_statistic = page.header.promo_statistic %}
+{% set image = page.media[page.header.promo_statistic.image] %}
+
+{% block render_block %}
+    <div class="promo-text-image slide-up">
+        <div class="promo-ti-container container">
+            <div class="promo-ti-text">
+                <h3>{{ page.header.title }}</h3>
+                <div>{{ page.content|raw }}</div>
+            </div>
+            <div class="promo-ti-image">
+                {% if promo_statistic and promo_statistic.enabled == '1' %}
+                    <div class="popularity">
+                        <div class="popularity-bar">
+                            <img src="{{ url('theme://images/percent.svg') }}" />
+                            {% if promo_statistic.promo_1.value != '' %}
+                                <div class="popularity-container">
+                                    <h3>{{ promo_statistic.promo_1.value }}</h3>
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% if promo_statistic.promo_1.label != '' %}
+                            <h3>{{ promo_statistic.promo_1.label }}</h3>
+                        {% endif %}
+                    </div>
+                    <div class="clients"><img class="vector" src="{{ url('theme://images/people.svg') }}" />
+                        <div class="clients-text">
+                            {% if promo_statistic.promo_2.value != '' %}
+                                <h5>{{ promo_statistic.promo_2.value }}</h5>
+                            {% endif %}
+                            {% if promo_statistic.promo_2.label != '' %}
+                                <p>{{ promo_statistic.promo_2.label }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                <img src="{{ image.url }}"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

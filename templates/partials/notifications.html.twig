@@ -1,0 +1,47 @@
+{% set status_mapping = {
+	'success': {classes: 'bg-green-50 text-green-500 border-green-200', icon: 'info-circle'},
+  'info': {classes: 'bg-blue-50 text-blue-500 border-blue-200', icon: 'info-circle'},
+  'error': {classes: 'bg-red-50 text-red-500 border-red-200', icon: 'alert-triangle'},
+  'warning': {classes: 'bg-orange-50 text-orange-500 border-orange-200', icon: 'alert-circle'}
+  }
+%}
+
+
+<div x-data="noticesHandler()"
+	 @notice.window="add($event.detail)"
+	 class="fixed inset-0 flex flex-col-reverse items-end justify-end h-screen w-screen z-[1000] pointer-events-none pb-6 pr-6">
+	{% for message in grav.messages.fetch %}
+		{% set scope = message.scope|e %}
+		{% set classes = status_mapping[scope].classes %}
+		{% set icon = status_mapping[scope].icon %}
+		{% set delay = 3000 + (scope != 'info' ? 1000 : 0) + (loop.index0 * 500) %}
+
+		<div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, {{ delay }})"
+			 @click="show = false"
+			 class="{{ classes }} border shadow-xl rounded-md mt-2 py-3 px-6 flex items-center pointer-events-auto">
+			<span>{{ icon(icon, 'w-6 h-6 mr-2')|raw }}</span>
+			<span>{{ message.message|raw }}</span>
+		</div>
+	{% endfor %}
+
+	<div>
+		<template x-for="notice of notices" :key="notice.id">
+			<div
+				x-show="visible.includes(notice)"
+				x-transition
+				@click="remove(notice.id)"
+				:class="{
+					'bg-green-50 text-green-500 border-green-200': notice.type === 'success',
+					'bg-blue-50 text-blue-500 border-blue-200': notice.type === 'info',
+					'bg-orange-50 text-orange-500 border-orange-200': notice.type === 'warning',
+					'bg-red-50 text-red-500 border-red-200': notice.type === 'error',
+				}"
+				class="border shadow-xl rounded-md mt-2 py-3 px-6 flex items-center pointer-events-auto"
+				>
+				<span>{{ icon('info-circle', 'w-6 h-6 mr-2')|raw }}</span>
+				<span x-text="notice.text"></span>
+			</div>
+		</template>
+	</div>
+</div>
+

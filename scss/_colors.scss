@@ -1,0 +1,30 @@
+:root {
+  --text-color: rgba(96, 105, 123, 1);
+  --h2-font-size: 2.875rem;
+  --h3-font-size: 2.1875rem;
+  --h1-font-size: 3.75rem;
+  --h4-font-size: 1.625rem;
+  --h5-font-size: 1.3125rem;
+  --text-font-size: 1rem;
+  --shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+  --color-bg: #F5F8FF;
+  --color-border:#6172F3;
+  // Don't remove variable from below. This whole project using this variable
+  --color-primary: #121212;
+  --color-primary-light: rgba(255, 80, 5, 0.10);
+  --color-white: #fff;
+  --color-black: #101828;
+  --color-mute-1: #606061;
+  --color-mute-2: #7c7c7d;
+  --color-mute-3: #929294;
+  --color-secondary: #121212;
+  --color-secondary-light: #f67d49;
+  --color-grey:#797a7b;
+  --color-purple: rgba(96, 93, 186, 1);
+  --color-tertiary: #F5F5F5;
+  --gradient: linear-gradient(98deg, var(--color-primary) 2.35%, var(--color-primary-light) 96.42%);
+  --gradient-secondary: linear-gradient(98deg, var(--color-primary-light) 1.62%, var(--color-primary) 95.67%);
+}
+
+$label_error: #d55353;
+$field_background_disabled: #f1f1f1;

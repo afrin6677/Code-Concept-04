@@ -1,0 +1,33 @@
+title: About Us
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            content_section:
+              ordering@: 3
+              type: section
+              title: Content Section
+              underline: true
+              
+              fields:
+                header.contents:
+                  style: vertical
+                  type: list
+                  fields:
+                    .img:
+                      type: pagemediaselect
+                      label: Image
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .text.translatable:
+                      type: textarea
+                      label: Details
+                      classes: 'translatable'
+                      rows: 8

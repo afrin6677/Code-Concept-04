@@ -1,0 +1,8 @@
+{% set brand_color = color(config.data.color ?? '#2863EB') %}
+{% set brand_light_color = color(brand_color.lighten(15)) %}
+{% set brand_dark_color = color(brand_color.darken(15)) %}
+:root {
+  --color-brand: {{ brand_color.tailwindFormat }};
+  --color-brand-light: {{ brand_light_color.tailwindFormat }};
+  --color-brand-dark: {{ brand_dark_color.tailwindFormat }};
+}

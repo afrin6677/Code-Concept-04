@@ -1,0 +1,19 @@
+<div class="logo {{logo_order}}">
+  {% set hero_present = false %}
+  {% for item in page.collection() %}
+    {% if item.header.hero %}
+      {% set hero_present = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if theme['logo'] %}
+    {% set imageIndex =  array_keys(theme['logo'])[0] %}
+    {% set logoArray = theme['logo'][imageIndex] %}
+    {% set logoPath = logoArray['path'] %}
+    {% set logo = url(logoPath) %}
+  {% else %}
+    {% set logo = url('theme://images/logo.png') %}
+  {% endif %}
+
+  <a href="/"> <img class="img" style="width: {{navbar_logo_size}}; height: auto;" src="{{ logo }}" /></a>
+</div>

@@ -1,0 +1,13 @@
+.content-section.terms {
+  .terms-area {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+    }
+  }
+
+  .language-switcher {
+    display: none;
+  }
+}

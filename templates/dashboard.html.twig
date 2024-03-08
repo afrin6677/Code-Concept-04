@@ -1,0 +1,17 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+    <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24">
+        <div class="content-section">
+            {% include 'partials/notifications.html.twig' %}
+            {% include 'partials/messages.html.twig' %}
+
+            {% if '[WEBSITE_USER_ID]' in config.data.iframe_url %}
+                {% set iframe_url = config.data.iframe_url | replace({'[WEBSITE_USER_ID]': grav.user.data.id}) %}
+            {% else %}
+                {% set iframe_url = config.data.iframe_url %}
+            {% endif %}
+            <iframe class="dashboard-content" src="{{ iframe_url }}" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </article>
+{% endblock %}

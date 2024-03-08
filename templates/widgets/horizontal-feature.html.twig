@@ -1,0 +1,16 @@
+<div class="feature {{ module.classes|replace({',' : ' '}) }}">
+	<div class="feature-container">
+		{% set icon = page.media[feature_block.icon] %}
+		{% if module.icon_pattern == 'rounded' or module.icon_pattern == 'square' %}
+			<div class="icon-container  {{ module.icon_pattern }}">
+				<img class="icon" src="{{ icon.url }}"/></div>
+		{% else %}
+			<div>
+				<img class="icon" src="{{ icon.url }}"/></div>
+		{% endif %}
+	</div>
+	<div class="feature-content">
+		<h5 class="feature-title">{{ feature_block.title.translatable }}</h5>
+		<p>{{ feature_block.description.translatable }}</p>
+	</div>
+</div>
