@@ -5,13 +5,12 @@
         <div class="content-section">
             {% include 'partials/notifications.html.twig' %}
             {% include 'partials/messages.html.twig' %}
-
             {% if '[WEBSITE_USER_ID]' in config.data.iframe_url %}
-                {% set iframe_url = config.data.iframe_url | replace({'[WEBSITE_USER_ID]': grav.user.data.id}) %}
+                {% set iframe_url = config.data.iframe_url ? config.data.iframe_url | replace({'[WEBSITE_USER_ID]': grav.user.data.id}) : config.data.application_url %}
             {% else %}
-                {% set iframe_url = config.data.iframe_url %}
+                {% set iframe_url = config.data.iframe_url ?? config.data.application_url %}
             {% endif %}
-            <iframe class="dashboard-content" src="{{ iframe_url }}" frameborder="0" width="100%" height="100%"></iframe>
+            <iframe class="dashboard-content" src="{{ lms_account.getRenderedUrl ?? iframe_url }}" frameborder="0" width="100%" height="100%"></iframe>
         </div>
     </article>
 {% endblock %}

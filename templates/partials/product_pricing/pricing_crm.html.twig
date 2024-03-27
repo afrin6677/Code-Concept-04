@@ -1,3 +1,33 @@
+{% set gold = null %}
+{% set silver = null %}
+{% set bronze = null %}
+
 {% for product in products %}
-	{% include 'partials/product_pricing/plan_crm.html.twig' with {product: product } %}
+    {% if product.name|lower matches '/gold/i' and gold is null %}
+        {% set gold = product %}
+    {% elseif product.name|lower matches '/silver/i' and silver is null %}
+        {% set silver = product %}
+    {% elseif product.name|lower matches '/bronze/i' and bronze is null %}
+        {% set bronze = product %}
+    {% endif %}
 {% endfor %}
+
+{% if gold is not null %}
+    {% include 'partials/product_pricing/plan_crm.html.twig' with {product: gold } %}
+{% endif %}
+
+{% if silver is not null %}
+    {% include 'partials/product_pricing/plan_crm.html.twig' with {product: silver } %}
+{% endif %}
+
+{% if bronze is not null %}
+    {% include 'partials/product_pricing/plan_crm.html.twig' with {product: bronze } %}
+{% endif %}
+
+
+
+{# 
+{% for product in products %}
+	{{dd(product.name)}}
+	{% include 'partials/product_pricing/plan_crm.html.twig' with {product: product } %}
+{% endfor %} #}

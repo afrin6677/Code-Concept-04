@@ -1,5 +1,5 @@
 {# {% set plan_translations = plan.translated_properties[grav.language.getLanguage] %} #}
-<div class="pricing">
+<div id="modular_pricing" class="pricing">
   <div class="pricing-content">
 
     <div class="price">
@@ -7,7 +7,7 @@
 				<div class="type-wrap">{{ plan.name }}</div>
 			</div>
 
-      <p class="description">Descriptions</p>
+      {# <p class="description">Descriptions</p> #}
 
       <div class="pricing-group">
         <span class="pricing-wrap">
@@ -23,7 +23,7 @@
             </div>
         </span>
 
-        <span class="text-sm">/
+        <span class="period">/
           {% if plan.interval_count == 1 %}
             {% if plan.interval == 'days' %}
               {{ 'METRICALO.DAY'|t }}

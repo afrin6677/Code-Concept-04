@@ -1,0 +1,42 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{% set image = page.media[page.header.text_right.image] %}
+
+{% block render_block %}
+    {% set bg = url('theme://images/bg-dot.svg') %}
+    <img class="learning-bg-dotted-img" src="{{ bg }}" alt="">
+    <div class="learning container">
+        <div class="learning-container">
+            <div class="block">
+                Coding Interview Preparation
+            </div>
+            <div class="block">
+                QA
+            </div>
+            <div class="block">
+                Data Structures
+            </div>
+        </div>
+        <div class="learning-container">
+            <div class="block">
+                HTML
+            </div>
+            <div class="text">
+                Choose what you want to learn
+            </div>
+            <div class="block">
+                API
+            </div>
+        </div>
+        <div class="learning-container last">
+            <div class="block">
+                Responsive Web Design
+            </div>
+            <div class="block">
+                Information Security
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -19,11 +19,11 @@
     'title': page.header.title,
     'links': [
       {
-        'url': '/' ~ grav.language.getActive,
+        'url': '/',
         'title': "METRICALO.HOME"|t
       },
       {
-        'title': page.header.title|t
+        'title': page.header.title
       }
     ]
   } %}
@@ -31,7 +31,7 @@
   {% include 'partials/messages.html.twig' %}
   <div class="max-w-6xl mx-auto rounded-lg bg-white shadow-2xl shadow-gray-300 border border-gray-200 p-12 slide-up">
     <div class="mb-8 content-section">
-      <a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
+      <a class="btn btn__simple my-orders" href="{{ url('profile/orders') }}">
         {{ 'METRICALO.MY_ORDERS'|t }}{{ icon('arrow-right', 'h3 w-3 ml-1')|raw }}
       </a>
     </div>
@@ -44,10 +44,10 @@
         </h2>
         {% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
         <div class="form-actions flex justify-between space-x-2">
-          <a href="{{ url(grav.language.getActive ~ '/profile/change-password') }}" class="button primary no-underline">
+          <a href="{{ url('profile/change-password') }}" class="button button-secondary no-underline">
             {{ 'METRICALO.CHANGE_PASSWORD'|t }}
           </a>
-          <button form="user-profile" type="submit" class="button primary">
+          <button form="user-profile" type="submit" class="button button-secondary">
             {{ 'METRICALO.EDIT_PROFILE'|t }}
           </button>
         </div>

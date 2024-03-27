@@ -14,12 +14,12 @@
 
 {% set links = [
   {
-    'url': '/',
-    'title': "BSCOPE.LOGIN_HEADER_HOME"|t
+    'url': '/' ~ grav.language.getActive,
+    'title': "METRICALO.HOME"|t
   },
   {
-    'url': url('profile'),
-    'title': 'BSCOPE.BREADCRUMB_PROFILE'|t
+    'url': url(grav.language.getActive ~ '/profile'),
+    'title': 'METRICALO.PROFILE'|t
   },
   {
     'title': 'METRICALO.MY_ORDERS'|t
@@ -29,15 +29,15 @@
 {% if id %}
   {% set links = [
     {
-      'url': '/',
-      'title': "BSCOPE.LOGIN_HEADER_HOME"|t
+      'url': '/' ~ grav.language.getActive,
+      'title': "METRICALO.HOME"|t
     },
     {
-      'url': url('profile'),
-      'title': 'BSCOPE.BREADCRUMB_PROFILE'|t
+      'url': url(grav.language.getActive ~ '/profile'),
+      'title': 'METRICALO.PROFILE'|t
     },
     {
-      'url': url('profile/orders'),
+      'url': url(grav.language.getActive ~ '/profile/orders'),
       'title': 'METRICALO.MY_ORDERS'|t
     },
     {
@@ -80,7 +80,7 @@
           <td>{{ invoice.total_incl_vat }} {{ invoice.currency }}</td>
           <td>{{ invoice.status }}</td>
           <td>{{ invoice.created_at|date('d/m/Y H:i:s') }}</td>
-          <td><a class="btn" href="{{ url('profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
+          <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
         </tr>
       {% endfor %}
       </tbody>

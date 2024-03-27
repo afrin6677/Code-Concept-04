@@ -5,11 +5,11 @@
         'title': page.header.title,
         'links': [
             {
-                'url': '/',
-                'title': "BSCOPE.LOGIN_HEADER_HOME"|t
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
             },
             {
-                'title': "BSCOPE.LOGIN_HEADER_LOGIN"|t
+                'title': page.header.title
             }
         ]
     } %}

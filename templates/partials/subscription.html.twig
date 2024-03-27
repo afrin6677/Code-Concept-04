@@ -1,0 +1,25 @@
+{% set subscription = website_manager_api.getActiveSubscription(grav.user.data.customer_id) %}
+
+{% set userSubscription = forms('user-subscription') %}
+{% do userSubscription.setAllData({
+  id: subscription.data[0].id,
+  name: subscription.data[0].name,
+  type: subscription.data[0].type,
+  status: subscription.data[0].status,
+  price: subscription.data[0].price,
+  interval: subscription.data[0].interval,
+}) %}
+
+
+{% include 'forms/form.html.twig' with { form: userSubscription, action: url('profile/cancel-membership') } %}
+<div class="form-actions">
+  {% if canSubmit != true %}
+    <a href="{{ url(grav.language.getActive ~ '/profile/cancel-membership') }}" class="button button-secondary danger no-underline">
+      {{ 'METRICALO.CANCEL_SUBSCRIPTION'|t }}
+    </a>
+  {% else %}
+    <button form="user-subscription" type="submit" class="button button-secondary danger no-underline">
+      {{ 'METRICALO.CANCEL_SUBSCRIPTION'|t }}
+    </button>
+  {% endif %}
+</div>

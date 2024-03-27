@@ -20,6 +20,11 @@
       flex-direction: column;
     }
 
+    img {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+
     .text-right-image {
       max-width: 614px;
       flex: 1 0 49%;
@@ -31,6 +36,8 @@
 
       img {
         width: 100%;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
       }
     }
 

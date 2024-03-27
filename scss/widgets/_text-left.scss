@@ -68,6 +68,8 @@
   }
 
   .paragraph-image {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
     @include desktop-small {
       height: auto;
       display: flex;

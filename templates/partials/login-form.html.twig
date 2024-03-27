@@ -50,7 +50,7 @@
                         <div class="form-data rememberme" data-grav-default="null" data-grav-disabled="true" data-grav-field="checkbox">
                             <div class="form-input-wrapper">
                                 <input type="checkbox" value="1" name="rememberme" id="#rememberme">
-                                <label class="inline" for="#rememberme" title="{{ 'PLUGIN_LOGIN.REMEMBER_ME_HELP'|t }}">{{ 'PLUGIN_LOGIN.REMEMBER_ME'|t }}</label>
+                                <label class="inline" for="#rememberme" title="{{ 'METRICALO.REMEMBER_ME'|t }}">{{ 'METRICALO.REMEMBER_ME'|t }}</label>
                             </div>
                         </div>
                     {% endif %}
@@ -59,9 +59,9 @@
                         {% set forgot_button = form.login.forgot_button ?? true %}
                         {% set forgot_route = grav.login.getRoute('forgot') %}
                     <div class="form-action-wrapper">
-                        <button class="{{ form_button_classes ?: 'button primary' }}" type="submit"  name="task" value="login.login"> {{ 'BSCOPE.LOGIN_FORM_LOGIN'|t }}</button>
+                        <button class="{{ form_button_classes ?: 'button primary' }}" type="submit"  name="task" value="login.login"> {{ 'METRICALO.LOGIN'|t }}</button>
                         {% if forgot_button and forgot_route %}
-                            <a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative ~ forgot_route }}"> {{ 'BSCOPE.LOGIN_FORM_FORGOT_PASSWORD'|t }}</a>
+                            <a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative ~ forgot_route }}"> {{ 'METRICALO.I_FORGOT_PASSWORD'|t }}</a>
                         {% endif %}
                     </div>
                 </div>

@@ -210,7 +210,9 @@ function closeModal() {
 	modal.style.display = 'none';
 }
 
-openModalButton.addEventListener('click', openModal);
+if(openModalButton){
+	openModalButton.addEventListener('click', openModal);
+}
 
 if (closeModalButton != null) {
 	closeModalButton.addEventListener('click', closeModal);

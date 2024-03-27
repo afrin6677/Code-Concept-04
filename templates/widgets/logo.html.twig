@@ -11,6 +11,7 @@
     {% set logoArray = theme['logo'][imageIndex] %}
     {% set logoPath = logoArray['path'] %}
     {% set logo = url(logoPath) %}
+    {# {{ dd (logoPath) }} #}
   {% else %}
     {% set logo = url('theme://images/logo.png') %}
   {% endif %}

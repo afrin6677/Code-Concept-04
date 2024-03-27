@@ -304,21 +304,6 @@ form:
       title: Footer Style Section
       underline: true
       fields:
-        footer_style:
-          label: Footer Style
-          type: selectize
-          selectize:
-            options:
-              - text: "Default"
-                value: "default"
-              - text: "Logo Right"
-                value: "logo-right"
-              - text: "Logo Top"
-                value: "logo-top"
-              - text: "Payment Logo Right"
-                value: "payment-logo-right"
-
-
         footer_background_color:
           label: Footer Background Color
           type: selectize

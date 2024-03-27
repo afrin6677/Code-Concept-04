@@ -1,10 +1,10 @@
 {% extends 'partials/base.html.twig' %}
 {% block article %}
-  <article class="{{ max_width }} {{ section_padding }} flex-1 w-full pt-24 pb-8">
+  {# <article class="{{ max_width }} {{ section_padding }} flex-1 w-full pt-24 pb-8">
     <div class="prose max-w-none pt-12 prose">
       <h1>{{ 'METRICALO.COURSE'|t }}</h1>
     </div>
-  </article>
+  </article> #}
   {% if config.data.iframe_url %}
     {% if '[WEBSITE_USER_ID]' in config.data.iframe_url %}
       {% set iframe_url = config.data.iframe_url | replace({'[WEBSITE_USER_ID]': grav.user.data.id}) %}

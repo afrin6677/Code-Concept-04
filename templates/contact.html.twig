@@ -1,13 +1,17 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block article %}
+{#    {% for module in page.collection() %}#}
+    {#        {{ module.content|raw }}#}
+    {#    {% endfor %}#}
+
+    {% set module = page.header %}
     {% include 'partials/no-hero-header.html.twig' with {
         'title': page.header.title,
         'links': [
             {
-                'url': '/',
-                'title': "BSCOPE.LOGIN_HEADER_HOME"|t
-
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
             },
             {
                 'title': page.header.title|t
@@ -42,7 +46,7 @@
                 {% set image_work = page.media['work.svg'] %}
                 <p><img src="{{ image_work.url }}"/> <span class="span">{{ webdata('support_hours') }}<br /></span></p>
                 {% set image_location = page.media['location.svg'] %}
-                <p><img src="{{ image_location.url }}"/> <span class="span"> {{ webdata('company.address') }}</span></p>
+                <p><img src="{{ image_location.url }}"/> <span class="span"> {{ webdata('company.address') }}, {{ webdata('company.city') }}, {{ webdata('company.postcode') }}, {{ webdata('company.country') }}</span></p>
 
                 {# <p>Business Number: <span class="span"> {{ webdata('company.business_number') }}</span></p> #}
                 {# <p> VAT: <span class="span"> {{ webdata('company.vat_number') }}</span></p> #}

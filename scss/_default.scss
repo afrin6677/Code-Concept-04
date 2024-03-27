@@ -15,7 +15,7 @@ html {
 body {
   box-sizing: border-box;
   overflow: hidden;
-  font-family: 'Urbanist', sans-serif;
+  font-family: var(--default-font);
   font-weight: 400;
   line-height: 1.7;
   position: relative;
@@ -283,6 +283,7 @@ label {
 
 .form-input {
   margin-bottom: 1rem;
+  font-family: var(--default-font);
 }
 
 .button-secondary {
